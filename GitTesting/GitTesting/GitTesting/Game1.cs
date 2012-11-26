@@ -20,6 +20,10 @@ namespace GitTesting
         SpriteBatch spriteBatch;
 
         Texture2D background;
+        int floor = 340;
+
+        GameObject megaman;
+        Animation run;
 
         public Game1()
         {
@@ -36,6 +40,8 @@ namespace GitTesting
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            megaman = new GameObject();
+            megaman.Scale = 2.0f;
 
             base.Initialize();
         }
@@ -50,6 +56,17 @@ namespace GitTesting
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             background = Content.Load<Texture2D>("stage");
+
+            megaman.Sprite = Content.Load<Texture2D>("MegaMan");
+            //HACK
+            megaman.Position = new Vector2(0, floor - 40);
+
+            run = new Animation();
+            run.FrameCount = 3;
+            run.Frames = new Rectangle[3];
+            run.Frames[0] = new Rectangle(0, 31, 34, 30);
+            run.Frames[1] = new Rectangle(34, 31, 34, 30);
+            run.Frames[2] = new Rectangle(68, 31, 34, 30);
 
             // TODO: use this.Content to load your game content here
         }
@@ -70,11 +87,27 @@ namespace GitTesting
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            KeyboardState ks = Keyboard.GetState();
+
             // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
+                || ks.IsKeyDown(Keys.Escape))
                 this.Exit();
 
+            if (ks.IsKeyDown(Keys.Left))
+            {
+                megaman.Position.X -= 5;
+                megaman.Facing = Direction.Left;
+            }
+            else if (ks.IsKeyDown(Keys.Right))
+            {
+                megaman.Position.X += 5;
+                megaman.Facing = Direction.Right;
+            }
+
             // TODO: Add your update logic here
+
+            run.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -90,7 +123,10 @@ namespace GitTesting
             // TODO: Add your drawing code here
             spriteBatch.Begin();
 
-            spriteBatch.Draw(background, Vector2.Zero, Color.White);
+            spriteBatch.Draw(background, Vector2.Zero, null, Color.White, 0.0f, Vector2.Zero, 2.0f, SpriteEffects.None, 1.0f);
+
+            SpriteEffects effects = megaman.Facing == Direction.Right ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
+            spriteBatch.Draw(megaman.Sprite, megaman.Position, run.CurrentFrame, Color.White, 0.0f, Vector2.Zero, megaman.Scale, effects, 0.0f);
 
             spriteBatch.End();
 

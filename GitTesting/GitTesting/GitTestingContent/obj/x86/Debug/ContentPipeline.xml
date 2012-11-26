@@ -8,16 +8,19 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>F:\Projects\GitTesting\GitTesting\GitTesting\GitTesting\bin\x86\Debug\Content\stage.xnb</Output>
-      <Time>2012-11-25T22:03:56.5846876-08:00</Time>
+      <Time>2012-11-25T22:11:12.4146157-08:00</Time>
     </Item>
     <Item>
       <Source>MegaMan.png</Source>
       <Name>MegaMan</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor">0, 255, 0, 255</Data>
+      </Parameters>
       <Options>None</Options>
       <Output>F:\Projects\GitTesting\GitTesting\GitTesting\GitTesting\bin\x86\Debug\Content\MegaMan.xnb</Output>
-      <Time>2012-11-25T21:58:58.1316171-08:00</Time>
+      <Time>2012-11-25T22:38:38.2527522-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
