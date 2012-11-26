@@ -19,6 +19,8 @@ namespace GitTesting
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        Texture2D background;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -46,6 +48,8 @@ namespace GitTesting
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            background = Content.Load<Texture2D>("stage");
 
             // TODO: use this.Content to load your game content here
         }
@@ -84,6 +88,11 @@ namespace GitTesting
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            spriteBatch.Draw(background, Vector2.Zero, Color.White);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

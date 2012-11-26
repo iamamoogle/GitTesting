@@ -1,0 +1,2 @@
+Content\stage.xnb
+Content\MegaMan.xnb

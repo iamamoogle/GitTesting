@@ -1,0 +1,8 @@
+F:\Projects\GitTesting\GitTesting\GitTesting\GitTesting\bin\x86\Debug\GitTesting.exe
+F:\Projects\GitTesting\GitTesting\GitTesting\GitTesting\bin\x86\Debug\GitTesting.pdb
+F:\Projects\GitTesting\GitTesting\GitTesting\GitTesting\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Projects\GitTesting\GitTesting\GitTesting\GitTesting\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Projects\GitTesting\GitTesting\GitTesting\GitTesting\obj\x86\Debug\GitTesting.exe
+F:\Projects\GitTesting\GitTesting\GitTesting\GitTesting\obj\x86\Debug\GitTesting.pdb
+F:\Projects\GitTesting\GitTesting\GitTesting\GitTesting\bin\x86\Debug\Content\stage.xnb
+F:\Projects\GitTesting\GitTesting\GitTesting\GitTesting\bin\x86\Debug\Content\MegaMan.xnb
